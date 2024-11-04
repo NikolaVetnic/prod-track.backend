@@ -1,6 +1,6 @@
 ﻿namespace Catalogue.Api.Products.CreateProduct;
 
-internal class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
@@ -12,10 +12,11 @@ internal class CreateProductCommandHandler : ICommandHandler<CreateProductComman
             PurchaseDate = command.PurchaseDate,
             Description = command.Description,
         };
+ 
+        session.Store(product);
+        await session.SaveChangesAsync(cancellationToken);
 
-        //save to database
-
-        return new CreateProductResult(Guid.NewGuid());
+        return new CreateProductResult(product.Id);
     }
 }
 
