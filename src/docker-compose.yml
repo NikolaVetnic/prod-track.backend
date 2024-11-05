@@ -1,0 +1,6 @@
+services:
+  prodcataloguedb:
+    image: postgres
+
+volumes:
+  postgres_prodcataloguedb:
