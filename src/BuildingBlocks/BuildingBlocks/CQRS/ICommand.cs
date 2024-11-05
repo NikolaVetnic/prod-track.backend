@@ -1,4 +1,4 @@
-﻿namespace BuildingBlocks.CQRS;
+﻿namespace BuildingBlocks.Cqrs;
 
 public interface ICommand : ICommand<Unit> { }
 

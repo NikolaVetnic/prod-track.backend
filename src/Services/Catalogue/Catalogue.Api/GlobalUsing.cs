@@ -1,5 +1,5 @@
 ﻿global using Catalogue.Api.Models;
-global using BuildingBlocks.CQRS;
+global using BuildingBlocks.Cqrs;
 global using Mapster;
 global using MediatR;
 global using Carter;
