@@ -3,6 +3,6 @@ global using MediatR;
 global using Carter;
 global using Marten;
 
+global using Catalogue.Api.Exceptions;
 global using Catalogue.Api.Models;
 global using BuildingBlocks.Cqrs;
-global using Catalogue.Api.Exceptions;
