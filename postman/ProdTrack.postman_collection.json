@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "41edf411-0886-48e8-a33f-4cc115dcca70",
+		"_postman_id": "3267fd2c-10ea-48b7-9858-815cb7c848c6",
 		"name": "ProdTrack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15705090"
+		"_exporter_id": "29345409"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"Generic Product\",\r\n    \"Category\": [\"Clothes\", \"Accessories\"],\r\n    \"Description\": \"Description of a generic product.\",\r\n    \"ImageFile\": \"Generic Product Image File\",\r\n    \"Price\": 199.99\r\n}",
+							"raw": "{\r\n    \"Name\": \"Generic Product\",\r\n    \"Category\": [\"Clothes\", \"Accessories\"],\r\n    \"Price\": 199.99,\r\n    \"PurchaseDate\": \"2024-11-05\",\r\n    \"Description\": \"Description of a generic product.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -30,6 +30,104 @@
 							],
 							"path": [
 								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalogue_url}}/products",
+							"host": [
+								"{{catalogue_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalogue_url}}/products/0192fe70-7998-483d-93d5-662363288acf",
+							"host": [
+								"{{catalogue_url}}"
+							],
+							"path": [
+								"products",
+								"0192fe70-7998-483d-93d5-662363288acf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalogue_url}}/products/category/Clothes",
+							"host": [
+								"{{catalogue_url}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"Clothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": \"0192fe73-a957-4a61-82c1-1192e9d81c86\",\r\n    \"Name\": \"Updated Generic Product\",\r\n    \"Category\": [\"Clothes\", \"Accessories\"],\r\n    \"Price\": 169.69,\r\n    \"PurchaseDate\": \"2024-11-05\",\r\n    \"Description\": \"Description of a generic product.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{catalogue_url}}/products",
+							"host": [
+								"{{catalogue_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{catalogue_url}}/products/0192fe70-7998-483d-93d5-662363288acf",
+							"host": [
+								"{{catalogue_url}}"
+							],
+							"path": [
+								"products",
+								"0192fe70-7998-483d-93d5-662363288acf"
 							]
 						}
 					},
