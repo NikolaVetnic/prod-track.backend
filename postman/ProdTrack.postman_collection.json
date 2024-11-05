@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "41edf411-0886-48e8-a33f-4cc115dcca70",
+		"name": "ProdTrack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15705090"
+	},
+	"item": [
+		{
+			"name": "1 Catalogue",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Generic Product\",\r\n    \"Category\": [\"Clothes\", \"Accessories\"],\r\n    \"Description\": \"Description of a generic product.\",\r\n    \"ImageFile\": \"Generic Product Image File\",\r\n    \"Price\": 199.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{catalogue_url}}/products",
+							"host": [
+								"{{catalogue_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
