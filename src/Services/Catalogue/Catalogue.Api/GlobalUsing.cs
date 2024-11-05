@@ -5,3 +5,4 @@ global using Marten;
 
 global using Catalogue.Api.Models;
 global using BuildingBlocks.Cqrs;
+global using Catalogue.Api.Exceptions;
